@@ -15,7 +15,7 @@ class AnimalController extends Controller
             "species" => "Chien",
             "age" => 5,
             "description" => "Une labrador joueuse et affectueuse qui adore la compagnie.",
-            "photo" => "blabla"
+            "photo" => "bella.png"
         ]);
 
         Animal::create([
@@ -23,7 +23,7 @@ class AnimalController extends Controller
             "species" => "Chat",
             "age" => 3,
             "description" => "Une chatte calme et câline qui aime les endroits tranquilles.",
-            "photo" => "blabla"
+            "photo" => "luna.png"
         ]);
 
         Animal::create([
@@ -31,49 +31,64 @@ class AnimalController extends Controller
             "species" => "Chien",
             "age" => 3,
             "description" => "Un jeune chiot plein d’énergie qui adore courir et jouer dehors.",
-            "photo" => "blabla"
+            "photo" => "max.png"
         ]);
 
         return "Les animaux ont été créés avec succès";
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function createCoquillette()
     {
-        //
+        Animal::create([
+            "name" => "Coquillette",
+            "species" => "Chien",
+            "age" => 3,
+            "description" => "Une Shiba Inu vive et joyeuse, toujours prête à jouer et à explorer. Coquillette est curieuse, intelligente et très expressive, avec un petit caractère indépendant mais plein de tendresse pour ceux qu’elle aime.",
+            "photo" => "coquillette.png"
+        ]);
+
+        return redirect()->route('home');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function update($id)
     {
-        //
+        $animal = Animal::find($id);
+
+        if (!$animal) {
+            return "Erreur : L'animal avec l'ID n°$id n'existe pas";
+        }
+
+        $animal->name = $animal->name . " Modifié";
+        $animal->save();
+
+        return redirect()->route('home');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function delete($id)
     {
-        //
+
+        $animal = Animal::find($id);
+
+        if (!$animal) {
+            return "Erreur : L'animal avec l'ID n°$id n'existe pas";
+        }
+
+        $animal->delete();
+
+        return redirect()->route('home');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function show($id)
     {
-        //
+
+        $animal = Animal::find($id);
+
+        if (!$animal) {
+            return "Erreur : L'animal avec l'ID n°$id n'existe pas";
+        }
+
+        return view('pages.animal-details', ['animal' => $animal]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+  
 }

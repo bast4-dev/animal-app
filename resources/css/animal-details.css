@@ -1,0 +1,19 @@
+.animal-details-container {
+    display: flex;
+    gap: 40px;
+    max-width:738px;
+}
+
+.animal-details-img {
+    flex-shrink: 0;
+}
+
+.animal-details-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.animal-details-infos p {
+    margin-bottom: 10px;
+}

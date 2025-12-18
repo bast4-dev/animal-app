@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('species');
+            $table->integer('age');
+            $table->text('description');
+            $table->string('photo');
         });
     }
 

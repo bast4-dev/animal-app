@@ -9,3 +9,98 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body {
+    background-color: #f5f8fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: poppins, sans-serif;
+}
+
+header {
+    padding: 16px 32px;
+    display: flex;
+}
+
+header .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    gap: 32px;
+}
+
+main {
+    flex: 1;
+    margin: 32px auto;
+}
+
+
+footer {
+    background: #ffff;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 48px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+#logo {
+    height: 50px;
+    width: auto;
+}
+
+#animal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.animal-card {
+    background: #ffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.animal-photo {
+    padding: 8px;
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.animal-content {
+    padding: 0px 8px;
+}
+
+.animal-name {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.animal-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-action {
+    flex: 1;
+    text-align: center;
+    color: #52c9ff;
+    padding: 8px;
+    font-weight: 500;
+}
