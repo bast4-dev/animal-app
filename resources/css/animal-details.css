@@ -6,6 +6,8 @@
 
 .animal-details-img {
     flex-shrink: 0;
+    /* Pour safari */
+    width: 220px; 
 }
 
 .animal-details-img img {

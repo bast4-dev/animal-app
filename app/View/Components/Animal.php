@@ -8,21 +8,18 @@ use Illuminate\View\Component;
 
 class Animal extends Component
 {
-    public $nom;
-    public $espece;
-    public $age;
-    public $description;
-    public $image;
-
-    public function __construct($nom, $espece, $age, $description, $image)
+    public $animal;
+    /**
+     * Create a new component instance.
+     */
+    public function __construct($animal)
     {
-        $this->nom = $nom;
-        $this->espece = $espece;
-        $this->age = $age;
-        $this->description = $description;
-        $this->image = $image;
+        $this->animal = $animal;
     }
 
+    /**
+     * Get the view / contents that represent the component.
+     */
     public function render(): View|Closure|string
     {
         return view('components.animal');
